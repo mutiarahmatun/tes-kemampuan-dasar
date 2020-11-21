@@ -1,0 +1,188 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "85af00caf259c183dd17331d25f4f9fb",
+    "entities": [
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `score` INTEGER NOT NULL, `medalId` INTEGER NOT NULL, FOREIGN KEY(`medalId`) REFERENCES `Medal`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "score",
+            "columnName": "score",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "medalId",
+            "columnName": "medalId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Medal",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "medalId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Medal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `drawable` INTEGER NOT NULL, `minScore` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "drawable",
+            "columnName": "drawable",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "minScore",
+            "columnName": "minScore",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Questions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `enContent` TEXT, `enOptionA` TEXT, `enOptionB` TEXT, `enOptionC` TEXT, `enOptionD` TEXT, `idContent` TEXT, `idOptionA` TEXT, `idOptionB` TEXT, `idOptionC` TEXT, `idOptionD` TEXT, `answer` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enContent",
+            "columnName": "enContent",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "enOptionA",
+            "columnName": "enOptionA",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "enOptionB",
+            "columnName": "enOptionB",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "enOptionC",
+            "columnName": "enOptionC",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "enOptionD",
+            "columnName": "enOptionD",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idContent",
+            "columnName": "idContent",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idOptionA",
+            "columnName": "idOptionA",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idOptionB",
+            "columnName": "idOptionB",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idOptionC",
+            "columnName": "idOptionC",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "idOptionD",
+            "columnName": "idOptionD",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "answer",
+            "columnName": "answer",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '85af00caf259c183dd17331d25f4f9fb')"
+    ]
+  }
+}

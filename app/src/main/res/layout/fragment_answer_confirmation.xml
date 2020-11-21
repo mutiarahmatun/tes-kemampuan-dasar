@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="answerConfirmationInterface"
+            type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.interfaces.AnswerConfirmationInterface" />
+        <variable
+            name="optionsView"
+            type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.OptionsView" />
+    </data>
+</layout>
