@@ -110,7 +110,7 @@ public class TKDActivity extends AppCompatActivity {
         alertDialog.setTitle(getResources().getString(R.string.back_button_disabled));
         alertDialog.setMessage(getResources().getString(R.string.back_button_disabled_content));
 
-        alertDialog.setNegativeButton(getResources().getString(R.string.back_to_quiz),
+        alertDialog.setNegativeButton(getResources().getString(R.string.back_to_tkd),
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();

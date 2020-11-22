@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".tkd.TKDContentFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.OptionsView" />
+        <variable
+            name="optionsView"
+            type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.OptionsView" />
+
+        <variable
+            name="tKDContentInterface"
+            type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.interfaces.TKDContentInterface" />
+
+        <variable
+            name="questionView"
+            type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.QuestionView" />
+
+<!--        <variable-->
+<!--            name=""-->
+<!--            type="" />-->
+    </data>
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -11,4 +28,4 @@
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+</layout>
