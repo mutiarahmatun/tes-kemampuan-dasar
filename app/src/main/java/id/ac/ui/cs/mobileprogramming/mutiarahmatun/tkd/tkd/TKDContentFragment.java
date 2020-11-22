@@ -65,7 +65,7 @@ public class TKDContentFragment extends Fragment implements TKDContentInterface 
         }
 
         getFragmentManager().beginTransaction()
-                .replace(R.id.quizContent, AnswerConfirmationFragment.newInstance())
+                .replace(R.id.TKDContent, AnswerConfirmationFragment.newInstance())
                 .addToBackStack(null)
                 .commit();
     }

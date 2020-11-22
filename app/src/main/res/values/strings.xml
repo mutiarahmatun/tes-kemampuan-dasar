@@ -11,4 +11,7 @@
     <string name="back_button_disabled_content">"Please use back button on the app display.     If there isn't any back button, it means you can't go back at current situation. "</string>
     <string name="back_to_tkd">Back to test</string>
     <string name="channel_name">Timer</string>
+    <string name="connectivity_request">Please turn on your internet connection if you want to access hint.</string>
+    <string name="no_answer">No answer</string>
+    <string name="no_answer_content">The answer is still empty, please choose the answer</string>
 </resources>
