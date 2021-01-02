@@ -6,6 +6,10 @@
     <data>
         <import type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.OptionsView" />
         <variable
+            name="noteView"
+            type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.NoteView" />
+        
+        <variable
             name="optionsView"
             type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.OptionsView" />
 
@@ -17,15 +21,198 @@
             name="questionView"
             type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.QuestionView" />
 
-<!--        <variable-->
-<!--            name=""-->
-<!--            type="" />-->
+        <variable
+            name="localeCheck"
+            type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.util.LocaleCheck" />
+
     </data>
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragmentTKDContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".tkd.TKDContentFragment">
+
+        <Button
+            android:id="@+id/hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{() -> tKDContentInterface.showHint()}"
+            android:text="@string/hint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/submit" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{() -> tKDContentInterface.submit()}"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="@{localeCheck.isLocaleIndonesia() ? questionView.currentIdQuestion : questionView.currentEnQuestion}"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question">
+
+            <TextView
+                android:id="@+id/option_a_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_a, questionView.currentIdQuestionOptionA) : String.format(@string/question_option_a, questionView.currentEnQuestionOptionA)}" />
+
+            <TextView
+                android:id="@+id/option_b_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_b, questionView.currentIdQuestionOptionB) : String.format(@string/question_option_b, questionViewModel.currentEnQuestionOptionB)}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="40dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question">
+
+            <TextView
+                android:id="@+id/option_c_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_c, questionViewModel.currentIdQuestionOptionC) : String.format(@string/question_option_c, questionViewModel.currentEnQuestionOptionC)}" />
+
+            <TextView
+                android:id="@+id/option_d_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_d, questionViewModel.currentIdQuestionOptionD) : String.format(@string/question_option_d, questionViewModel.currentEnQuestionOptionD)}" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/noteEditText"
+            android:maxLength="25"
+            android:layout_width="257dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="@string/additional_note"
+            android:inputType="textPersonName"
+            android:text="@={noteView.note}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="83dp"
+            android:layout_marginTop="130dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <View
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/radio_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="100dp"
+                    android:checked="@{optionsView.optionChecked.equals(OptionsView.OPTION_A)}"
+                    android:gravity="center"
+                    android:onClick="@{()->optionsView.setOptionChecked(OptionsView.OPTION_A)}"
+                    android:text="@string/option_a" />
+
+                <RadioButton
+                    android:id="@+id/radio_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checked="@{optionsView.optionChecked.equals(OptionsView.OPTION_C)}"
+                    android:gravity="center"
+                    android:onClick="@{()->optionsView.setOptionChecked(OptionsView.OPTION_C)}"
+                    android:text="@string/option_c" />
+
+                <View
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <View
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/radio_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="100dp"
+                    android:checked="@{optionsView.optionChecked.equals(OptionsView.OPTION_B)}"
+                    android:gravity="center"
+                    android:onClick="@{()->optionsView.setOptionChecked(OptionsView.OPTION_B)}"
+                    android:text="@string/option_b" />
+
+                <RadioButton
+                    android:id="@+id/radio_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checked="@{optionsView.optionChecked.equals(OptionsView.OPTION_D)}"
+                    android:gravity="center"
+                    android:onClick="@{()->optionsView.setOptionChecked(OptionsView.OPTION_D)}"
+                    android:text="@string/option_d" />
+
+                <View
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

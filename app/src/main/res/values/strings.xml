@@ -14,4 +14,24 @@
     <string name="connectivity_request">Please turn on your internet connection if you want to access hint.</string>
     <string name="no_answer">No answer</string>
     <string name="no_answer_content">The answer is still empty, please choose the answer</string>
+    <string name="generate_name">Generate</string>
+    <string name="fill_thix_box_with_your_name">Fill this box with your name</string>
+    <string name="start">Start</string>
+    <string name="exit">Exit</string>
+    <string name="ready_to_take_tkd">Are you ready for the test?</string>
+    <string name="why_need_permission_title">Why need permission?</string>
+    <string name="why_need_permission_content">For sharing medal:     \nFirst, we need to write our medal asset to your external storage,     it needs your permission. Then, we need to read from your external     storage so we can send it, it needs your permission too.     \n\nFor saving the note:     \nWe need to write the note to your external storage,     it needs your permission.</string>
+    <string name="back">Back</string>
+    <string name="your_additional_note_is">Your additional note is</string>
+    <string name="hint">Hint</string>
+    <string name="submit">Submit</string>
+    <string name="additional_note">Additional note ...</string>
+    <string name="option_a">A</string>
+    <string name="option_c">C</string>
+    <string name="option_b">B</string>
+    <string name="option_d">D</string>
+    <string name="your_score">Your Score:</string>
+    <string name="share">Share</string>
+    <string name="save_notes">Save Note</string>
+    <string name="home">Home</string>
 </resources>

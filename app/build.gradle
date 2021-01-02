@@ -21,11 +21,11 @@ android {
             }
         }
 
-        // externalNativeBuild {
-        //     cmake {
-        //         cppFlags "-std=c++11"
-        //     }
-        // }
+         externalNativeBuild {
+             cmake {
+                 cppFlags "-std=c++11"
+             }
+         }
     }
 
     buildTypes {
@@ -35,12 +35,12 @@ android {
         }
     }
 
-    // externalNativeBuild {
-    //     cmake {
-    //         path "src/main/cpp/CMakeLists.txt"
-    //         version "3.10.2"
-    //     }
-    // }
+     externalNativeBuild {
+         cmake {
+             path "src/main/cpp/CMakeLists.txt"
+             version "3.10.2"
+         }
+     }
 
     dataBinding {
         enabled true

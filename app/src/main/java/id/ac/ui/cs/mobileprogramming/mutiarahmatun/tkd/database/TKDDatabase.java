@@ -9,6 +9,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.R;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.dao.MedalDao;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.dao.QuestionsDao;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.dao.UserDao;
@@ -28,7 +29,7 @@ public abstract class TKDDatabase extends RoomDatabase {
     public static synchronized TKDDatabase getDatabase(Context context){
         if (database == null){
             database = Room.databaseBuilder(context.getApplicationContext(),
-                    TKDDatabase.class, "kwiz_database")
+                    TKDDatabase.class, "tkd_database")
                     .fallbackToDestructiveMigration()
                     .addCallback(roomCallback)
                     .allowMainThreadQueries()
@@ -57,9 +58,9 @@ public abstract class TKDDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(Void... voids) {
             //Populate Medal
-//            medalDao.insert(new Medal("Gold", R.drawable.medal_gold, 1800));
-//            medalDao.insert(new Medal("Silver", R.drawable.medal_silver,800));
-//            medalDao.insert(new Medal("Bronze", R.drawable.medal_bronze,0));
+           medalDao.insert(new Medal("Gold", R.drawable.medal_gold, 1800));
+           medalDao.insert(new Medal("Silver", R.drawable.medal_silver,800));
+           medalDao.insert(new Medal("Bronze", R.drawable.medal_bronze,0));
 
             //Populate Question and Option
             questionDao.insert(

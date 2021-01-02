@@ -4,4 +4,7 @@ public interface TKDResultInterface {
 
     void home();
 
+    void share();
+
+    void saveNotes();
 }

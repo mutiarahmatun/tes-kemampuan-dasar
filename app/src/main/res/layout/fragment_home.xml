@@ -12,9 +12,99 @@
             type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.interfaces.HomeInterface" />
     </data>
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragmentHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".HomeFragment">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:text="@string/ready_to_take_tkd"
+            android:textAlignment="center"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <EditText
+                android:id="@+id/usernameEditText"
+                android:layout_width="230dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:ems="10"
+                android:hint="@string/fill_thix_box_with_your_name"
+                android:inputType="textPersonName"
+                android:maxLength="20"
+                android:text="@={userView.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/generateNameButton"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:onClick="@{() -> homeInterface.generateName()}"
+                android:text="@string/generate_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/usernameEditText"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/startButton"
+            android:onClick="@{() -> homeInterface.start()}"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="68dp"
+            android:text="@string/start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutUsername" />
+
+        <Button
+            android:id="@+id/exitButton"
+            android:onClick="@{() -> homeInterface.exit()}"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/exit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/leaderboardButton"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/leaderboardButton"
+            android:onClick="@{() -> homeInterface.showLeaderboard()}"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/leaderboard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

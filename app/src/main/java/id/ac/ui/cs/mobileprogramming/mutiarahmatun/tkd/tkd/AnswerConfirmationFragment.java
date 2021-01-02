@@ -13,9 +13,11 @@ import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.R;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.interfaces.AnswerConfirmationInterface;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.databinding.FragmentAnswerConfirmationBinding;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.OptionsView;
+import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.NoteView;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.QuestionView;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.TimerView;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.UserView;
+import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.util.LocaleCheck;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +26,7 @@ import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.UserView;
  */
 public class AnswerConfirmationFragment extends Fragment implements AnswerConfirmationInterface {
 
+    private NoteView noteView;
     private OptionsView optionsView;
     private QuestionView questionView;
     private UserView userView;
@@ -39,8 +42,8 @@ public class AnswerConfirmationFragment extends Fragment implements AnswerConfir
                              Bundle savedInstanceState) {
         FragmentAnswerConfirmationBinding binding =
                 FragmentAnswerConfirmationBinding.inflate(inflater, container, false);
-//        noteViewModel = ViewModelProviders.of(getActivity()).get(NoteViewModel.class);
-//        binding.setNoteViewModel(noteViewModel);
+        noteView = ViewModelProviders.of(getActivity()).get(NoteView.class);
+        binding.setNoteView(noteView);
         optionsView = ViewModelProviders.of(getActivity()).get(OptionsView.class);
         binding.setOptionsView(optionsView);
         questionView = ViewModelProviders.of(getActivity()).get(QuestionView.class);
@@ -53,8 +56,8 @@ public class AnswerConfirmationFragment extends Fragment implements AnswerConfir
 
     @Override
     public void cancel(){
-        TKDActivity quizActivity = (TKDActivity)getActivity();
-        quizActivity.back();
+        TKDActivity tkdActivity = (TKDActivity)getActivity();
+        tkdActivity.back();
     }
 
     @Override
@@ -73,17 +76,17 @@ public class AnswerConfirmationFragment extends Fragment implements AnswerConfir
         }
 
 
-//        if (LocaleCheck.isLocaleIndonesia()){
-//            noteViewModel.addToFullNote("Question:\n" +
-//                    questionViewModel.getCurrentIdQuestion().getValue());
-//        } else {
-//            noteViewModel.addToFullNote("Question:\n" +
-//                    questionViewModel.getCurrentEnQuestion().getValue());
-//        }
-//        noteViewModel.addToFullNote("Note:\n" +
-//                noteViewModel.getNote().getValue());
+       if (LocaleCheck.isLocaleIndonesia()){
+           noteView.addToFullNote("Question:\n" +
+                   questionView.getCurrentIdQuestion().getValue());
+       } else {
+           noteView.addToFullNote("Question:\n" +
+                   questionView.getCurrentEnQuestion().getValue());
+       }
+       noteView.addToFullNote("Note:\n" +
+               noteView.getNote().getValue());
 
-//        noteViewModel.setNote(null);
+       noteView.setNote(null);
         questionView.nextQuestion();
         optionsView.setOptionChecked(null);
 

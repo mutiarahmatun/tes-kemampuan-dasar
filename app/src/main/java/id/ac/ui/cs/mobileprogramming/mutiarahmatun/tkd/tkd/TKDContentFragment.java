@@ -23,6 +23,7 @@ import java.net.URLEncoder;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.R;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.databinding.FragmentTkdContentBinding;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.interfaces.TKDContentInterface;
+import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.NoteView;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.OptionsView;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.QuestionView;
 
@@ -33,7 +34,7 @@ import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.QuestionView;
  */
 public class TKDContentFragment extends Fragment implements TKDContentInterface {
 
-//    private NoteViewModel noteViewModel;
+    private NoteView noteView;
     private OptionsView optionsView;
     private QuestionView questionView;
 
@@ -46,8 +47,8 @@ public class TKDContentFragment extends Fragment implements TKDContentInterface 
                              Bundle savedInstanceState) {
         FragmentTkdContentBinding binding =
                 FragmentTkdContentBinding.inflate(inflater, container, false);
-//        noteViewModel = ViewModelProviders.of(getActivity()).get(NoteViewModel.class);
-//        binding.setNoteViewModel(noteViewModel);
+        noteView = ViewModelProviders.of(getActivity()).get(NoteView.class);
+        binding.setNoteView(noteView);
         optionsView = ViewModelProviders.of(getActivity()).get(OptionsView.class);
         binding.setOptionsView(optionsView);
         questionView = ViewModelProviders.of(getActivity()).get(QuestionView.class);

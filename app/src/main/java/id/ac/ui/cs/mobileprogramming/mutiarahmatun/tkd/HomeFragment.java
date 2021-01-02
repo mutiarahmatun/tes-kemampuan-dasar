@@ -41,13 +41,21 @@ public class HomeFragment extends Fragment implements HomeInterface{
 
     public void showLeaderboard() {
 
+        getFragmentManager().beginTransaction()
+                .replace(R.id.activityMain, LeaderboardFragment.newInstance())
+                .addToBackStack(null)
+                .commit();
+
     }
 
     public void exit() {
+        getActivity().finish();
     }
 
     public void start() {
-        // Intent intent = new Intent(getActivity(), )
+        Intent intent = new Intent(getActivity(), TKDActivity.class);
+        intent.putExtra("username", userView.getName().getValue());
+        startActivity(intent);
     }
 
     public void generateName(){

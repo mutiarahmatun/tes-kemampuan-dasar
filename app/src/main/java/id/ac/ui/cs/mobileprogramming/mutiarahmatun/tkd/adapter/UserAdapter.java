@@ -11,6 +11,7 @@ import java.util.List;
 
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.models.User;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.databinding.LeaderboardItemBinding;
+
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
 
     private List<User> userList;
@@ -23,6 +24,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         this.userList = users;
         notifyDataSetChanged();
     }
+
     @Override
     public int getItemCount() {
         return userList != null ? userList.size() : 0;
