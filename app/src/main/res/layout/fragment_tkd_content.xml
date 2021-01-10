@@ -14,7 +14,7 @@
             type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.OptionsView" />
 
         <variable
-            name="tKDContentInterface"
+            name="tkdContentInterface"
             type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.interfaces.TKDContentInterface" />
 
         <variable
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:onClick="@{() -> tKDContentInterface.showHint()}"
+            android:onClick="@{() -> tkdContentInterface.showHint()}"
             android:text="@string/hint"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/submit" />
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:onClick="@{() -> tKDContentInterface.submit()}"
+            android:onClick="@{() -> tkdContentInterface.submit()}"
             android:text="@string/submit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -89,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_b, questionView.currentIdQuestionOptionB) : String.format(@string/question_option_b, questionViewModel.currentEnQuestionOptionB)}" />
+                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_b, questionView.currentIdQuestionOptionB) : String.format(@string/question_option_b, questionView.currentEnQuestionOptionB)}" />
         </LinearLayout>
 
         <LinearLayout
@@ -105,14 +105,14 @@
                 android:id="@+id/option_c_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_c, questionViewModel.currentIdQuestionOptionC) : String.format(@string/question_option_c, questionViewModel.currentEnQuestionOptionC)}" />
+                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_c, questionView.currentIdQuestionOptionC) : String.format(@string/question_option_c, questionView.currentEnQuestionOptionC)}" />
 
             <TextView
                 android:id="@+id/option_d_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_d, questionViewModel.currentIdQuestionOptionD) : String.format(@string/question_option_d, questionViewModel.currentEnQuestionOptionD)}" />
+                android:text="@{localeCheck.isLocaleIndonesia() ? String.format(@string/question_option_d, questionView.currentIdQuestionOptionD) : String.format(@string/question_option_d, questionView.currentEnQuestionOptionD)}" />
         </LinearLayout>
 
         <EditText

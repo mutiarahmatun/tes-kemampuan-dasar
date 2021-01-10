@@ -7,6 +7,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
 
+import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.R;
+
 public class NetworkChangeReceiver extends BroadcastReceiver {
 
     private Toast toast;
@@ -23,14 +25,14 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
 
         if (activeNetwork != null) {
             if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
-                toast = Toast.makeText(context, "Wifi available", Toast.LENGTH_SHORT);
+                toast = Toast.makeText(context, context.getResources().getString(R.string.connectivity_wifi), Toast.LENGTH_SHORT);
                 toast.show();
             } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
-                toast = Toast.makeText(context, "Mobile data available", Toast.LENGTH_SHORT);
+                toast = Toast.makeText(context, context.getResources().getString(R.string.connectivity_mobile_data), Toast.LENGTH_SHORT);
                 toast.show();
             }
         } else {
-            toast = Toast.makeText(context, "No internet available", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, context.getResources().getString(R.string.connectivity_nothing), Toast.LENGTH_SHORT);
             toast.show();
         }
     }

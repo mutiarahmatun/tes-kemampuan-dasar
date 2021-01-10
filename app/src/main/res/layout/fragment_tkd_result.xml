@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="tKDResultInterface"
+            name="tkdResultInterface"
             type="id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.interfaces.TKDResultInterface" />
         <variable
             name="userView"
@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:onClick="@{() -> tKDResultInterface.share()}"
+            android:onClick="@{() -> tkdResultInterface.share()}"
             android:text="@string/share"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:onClick="@{() -> tKDResultInterface.saveNotes()}"
+            android:onClick="@{() -> tkdResultInterface.saveNotes()}"
             android:text="@string/save_notes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:onClick="@{() -> tKDResultInterface.home()}"
+            android:onClick="@{() -> tkdResultInterface.home()}"
             android:text="@string/home"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

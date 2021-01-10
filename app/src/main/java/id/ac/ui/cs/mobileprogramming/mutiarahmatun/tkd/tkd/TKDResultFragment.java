@@ -56,7 +56,7 @@ public class TKDResultFragment extends Fragment implements TKDResultInterface {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TKDActivity tkdActivity = (TKDActivity) getActivity();
         tkdActivity.stopTimer();
@@ -77,7 +77,7 @@ public class TKDResultFragment extends Fragment implements TKDResultInterface {
                              Bundle savedInstanceState) {
         FragmentTkdResultBinding binding =
                 FragmentTkdResultBinding.inflate(inflater, container, false);
-        binding.setTKDResultInterface(this);
+        binding.setTkdResultInterface(this);
         binding.setUserView(userView);
         medalView = ViewModelProviders.of(getActivity()).get(MedalView.class);
         medalView.setMedal(userView.getPoin().getValue());
@@ -150,7 +150,7 @@ public class TKDResultFragment extends Fragment implements TKDResultInterface {
             }
         } else {
             getFragmentManager().beginTransaction()
-                    .replace(R.id.tkdContent, PermissionExplanationFragment.newInstance())
+                    .replace(R.id.TKDContent, PermissionExplanationFragment.newInstance())
                     .addToBackStack(null)
                     .commit();
         }

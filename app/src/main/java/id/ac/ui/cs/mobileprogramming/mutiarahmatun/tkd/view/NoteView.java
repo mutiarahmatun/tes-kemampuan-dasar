@@ -3,6 +3,8 @@ package id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.util.ExternalStoragePermissions;
+
 public class NoteView extends ViewModel {
     private MutableLiveData<String> note;
     private MutableLiveData<String> fullNote;

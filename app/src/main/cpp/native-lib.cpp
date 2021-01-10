@@ -12,9 +12,10 @@
 using namespace std;
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_id_ac_ui_cs_mobileprogramming_mutiarahmatun_tkd_HomeFragment_generateName(JNIEnv *env,
-                                                                               jobject obj,
-                                                                               jint length) {
+Java_id_ac_ui_cs_mobileprogramming_mutiarahmatun_tkd_HomeFragment_generateName(
+    JNIEnv *env,
+    jobject obj,
+    jint length) {
     // TODO: implement generateName()
 
     char consonents[] = {'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','z'};

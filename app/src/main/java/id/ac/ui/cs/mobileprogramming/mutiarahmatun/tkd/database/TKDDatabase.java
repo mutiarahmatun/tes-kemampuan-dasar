@@ -17,7 +17,7 @@ import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.models.Medal;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.models.Questions;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.models.User;
 
-@Database(entities = {User.class, Medal.class, Questions.class}, version = 1)
+@Database(entities = {Medal.class, Questions.class, User.class}, version = 1)
 public abstract class TKDDatabase extends RoomDatabase {
 
     private static TKDDatabase database;

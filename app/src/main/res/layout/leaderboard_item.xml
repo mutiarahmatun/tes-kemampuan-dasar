@@ -34,7 +34,7 @@
             android:textAlignment="center"
             android:layout_weight="1"
             android:textSize="24sp"
-            tools:text="@{String.valueOf(user.poin)}" />
+            tools:text="@{String.valueOf(user.score)}" />
 
     </LinearLayout>
 

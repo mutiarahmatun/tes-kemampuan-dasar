@@ -3,10 +3,14 @@ package id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.interfaces.HomeInterface;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.databinding.FragmentHomeBinding;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.view.UserView;
+import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.tkd.TKDActivity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import android.content.Intent;
+import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +25,7 @@ import androidx.lifecycle.ViewModelProviders;
 public class HomeFragment extends Fragment implements HomeInterface{
 
     private UserView userView;
-    private static final int GENERATE_NAME_LENGTH = 10;
+    private static final int GENERATE_NAME_LENGTH = 7;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();

@@ -1,5 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd;
 
+import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -7,7 +8,7 @@ import android.os.RemoteException;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.models.User;
 import id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.repositori.UserRepository;
 
-public class FirstRankService {
+public class FirstRankService extends Service{
     private UserRepository userRepository;
 
     private static final String TAG = "FirstRankService";

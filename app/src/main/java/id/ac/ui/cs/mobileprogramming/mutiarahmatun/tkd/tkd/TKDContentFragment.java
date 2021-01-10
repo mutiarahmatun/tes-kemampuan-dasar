@@ -54,7 +54,7 @@ public class TKDContentFragment extends Fragment implements TKDContentInterface 
         questionView = ViewModelProviders.of(getActivity()).get(QuestionView.class);
         binding.setQuestionView(questionView);
         binding.setLifecycleOwner(this);
-        binding.setTKDContentInterface(this);
+        binding.setTkdContentInterface(this);
         return binding.getRoot();
     }
 
