@@ -21,7 +21,7 @@
     <string name="write_note_permission_content">Please allow storage permission or empty the note</string>
     <string name="no_answer_content">The answer is still empty, please choose the answer</string>
     <string name="generate_name">Generate Name</string>
-    <string name="fill_thix_box_with_your_name">Fill this box with your name</string>
+    <string name="fill_thix_box_with_your_name">Enter your name here...</string>
     <string name="start">Start</string>
     <string name="exit">Exit</string>
     <string name="ready_to_take_tkd">Are you ready for the test?</string>
