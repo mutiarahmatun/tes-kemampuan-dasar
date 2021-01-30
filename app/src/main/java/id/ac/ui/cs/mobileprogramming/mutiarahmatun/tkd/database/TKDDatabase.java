@@ -65,19 +65,21 @@ public abstract class TKDDatabase extends RoomDatabase {
             //Populate Question and Option
             questionDao.insert(
                     new Questions(
-                            "5 cats eat 5 fishes in 5 minutes. 200 cats eat 200 fishes " +
-                                    "in how many minutes?",
-                            "1 minute",
-                            "200 minute",
-                            "5 minute",
-                            "0 minute",
-                            "5 kucing memakan 5 ikan dalam 5 menit. Berapa menit waktu " +
-                                    "yang dibutuhkan 200 kucing untuk memakan 200 ikan?",
-                            "1 menit",
-                            "200 menit",
-                            "5 menit",
-                            "0 menit",
-                            "C"
+                            "If you had only one match, then entered a dark room containing " +
+                                    "an oil lamp, some newspaper, and some kindling wood, which " +
+                                    "would you light first?",
+                            "Oil Lamp",
+                            "Match",
+                            "Wood",
+                            "Newspaper",
+                            "Jika kamu memiliki sebuah korek, kemudian memasuki sebuah ruangan " +
+                                    "yang di dalamnya terdapat lampu minyak, beberapa koran, beberapa kayu " +
+                                    "bakar, apa yang akan kamu nyalakan terlebih dahulu?",
+                            "Lampu minyak",
+                            "Korek",
+                            "Kayu",
+                            "Koran",
+                            "B"
                     )
             );
 
@@ -93,6 +95,24 @@ public abstract class TKDDatabase extends RoomDatabase {
                             "Oktober",
                             "Februari",
                             "Januari",
+                            "C"
+                    )
+            );
+
+            questionDao.insert(
+                    new Questions(
+                            "5 cats eat 5 fishes in 5 minutes. 200 cats eat 200 fishes " +
+                                    "in how many minutes?",
+                            "1 minute",
+                            "200 minute",
+                            "5 minute",
+                            "0 minute",
+                            "5 kucing memakan 5 ikan dalam 5 menit. Berapa menit waktu " +
+                                    "yang dibutuhkan 200 kucing untuk memakan 200 ikan?",
+                            "1 menit",
+                            "200 menit",
+                            "5 menit",
+                            "0 menit",
                             "C"
                     )
             );
@@ -115,26 +135,6 @@ public abstract class TKDDatabase extends RoomDatabase {
 
             questionDao.insert(
                     new Questions(
-                            "If you had only one match, then entered a dark room containing " +
-                                    "an oil lamp, some newspaper, and some kindling wood, which " +
-                                    "would you light first?",
-                            "Oil Lamp",
-                            "Match",
-                            "Wood",
-                            "Newspaper",
-                            "Jika kamu memiliki sebuah korek, kemudian memasuki sebuah ruangan " +
-                                    "yang di dalamnya terdapat lampu minyak, beberapa koran, beberapa kayu " +
-                                    "bakar, apa yang akan kamu nyalakan terlebih dahulu?",
-                            "Lampu minyak",
-                            "Korek",
-                            "Kayu",
-                            "Koran",
-                            "B"
-                    )
-            );
-
-            questionDao.insert(
-                    new Questions(
                             "If there are 12 fish and half of them drown, how many are there?",
                             "6",
                             "10",
@@ -146,6 +146,22 @@ public abstract class TKDDatabase extends RoomDatabase {
                             "3",
                             "12",
                             "D"
+                    )
+            );
+
+            questionDao.insert(
+                    new Questions(
+                            "Which is heavier, 100 pounds of rocks or 100 pounds of feathers?",
+                            "Rocks",
+                            "Feathers",
+                            "No one",
+                            "Cottons",
+                            "Manakah yang lebih berat, 100 pound batu atau 100 pound bulu?",
+                            "Batu",
+                            "Bulu",
+                            "Tidak ada",
+                            "Kapas",
+                            "C"
                     )
             );
 
@@ -167,16 +183,17 @@ public abstract class TKDDatabase extends RoomDatabase {
 
             questionDao.insert(
                     new Questions(
-                            "Which is heavier, 100 pounds of rocks or 100 pounds of feathers?",
-                            "Rocks",
-                            "Feathers",
-                            "No one",
-                            "Cottons",
-                            "Manakah yang lebih berat, 100 pound batu atau 100 pound bulu?",
-                            "Batu",
-                            "Bulu",
-                            "Tidak ada",
-                            "Kapas",
+                            "If you divide 30 by half and add ten, what do you get?",
+                            "25",
+                            "40",
+                            "70",
+                            "100",
+                            "Jika kamu membagi 30 dengan setengah kemudian menambahkannya " +
+                                    "dengan sepuluh, maka berapa hasilnya?",
+                            "25",
+                            "40",
+                            "70",
+                            "100",
                             "C"
                     )
             );
@@ -215,23 +232,6 @@ public abstract class TKDDatabase extends RoomDatabase {
                             "9",
                             "12",
                             "D"
-                    )
-            );
-
-            questionDao.insert(
-                    new Questions(
-                            "If you divide 30 by half and add ten, what do you get?",
-                            "25",
-                            "40",
-                            "70",
-                            "100",
-                            "Jika kamu membagi 30 dengan setengah kemudian menambahkannya " +
-                                    "dengan sepuluh, maka berapa hasilnya?",
-                            "25",
-                            "40",
-                            "70",
-                            "100",
-                            "C"
                     )
             );
 

@@ -114,7 +114,7 @@ public class TKDResultFragment extends Fragment implements TKDResultInterface {
 
     private void onShareMedal(String medal) {
         Uri path = FileProvider.getUriForFile(getActivity(),
-                "com.id.ac.ui.cs.mobileprogramming.ahmad_fauzan_amirul_isnain.kwiz.fileprovider",
+                "id.ac.ui.cs.mobileprogramming.mutiarahmatun.tkd.fileprovider",
                 new File(medal));
 
         Intent shareIntent = new Intent();

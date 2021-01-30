@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_answer">Tidak ada jawaban</string>
+    <string name="why_need_permission_title">Kenapa butuh izin?</string>
+    <string name="back">Kembali</string>
+    <string name="hint">Kata kunci</string>
+</resources>
